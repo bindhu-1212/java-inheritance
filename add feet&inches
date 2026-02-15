@@ -1,0 +1,47 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Distance 
+{
+    int feet;
+    int inches;
+    void get(int f,int i)
+    {
+        feet=f;
+        inches=i;
+    }
+}
+    class Calculate extends Distance 
+    {
+    Calculate add(Calculate d1, Calculate d2)
+    {
+       Calculate result = new Calculate ();
+        result.feet=d1.feet+d2.feet;
+        result.inches= d1.inches+d2.inches;
+        return result;
+    }
+    void show()
+    {
+        System.out.println("feet = " + feet + " inches = " + inches);
+    }
+}
+public class Main{
+public static void main (String[] args)
+{
+    Calculate d1 = new Calculate ();
+    Calculate d2= new Calculate ();
+    Calculate result = new Calculate ();
+   Scanner sc= new Scanner (System.in);
+   System.out.println("Enter feet and inches");
+    int feet1= sc.nextInt();
+    int inches1 = sc.nextInt();
+    d1.get(feet1,inches1);
+    System.out.println("Enter feet and inches");
+    int feet2=sc.nextInt();
+    int inches2=sc.nextInt();
+    d2.get(feet2,inches2);
+    result=result.add(d1,d2);
+    result.show();
+    
+}
+}
